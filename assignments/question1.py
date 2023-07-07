@@ -3,3 +3,4 @@ def my_func():
     print('Hello '+name + ', you are a good programmer')
 
 my_func()
+my_func()
