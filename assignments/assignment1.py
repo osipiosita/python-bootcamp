@@ -27,7 +27,7 @@ print('Amount after ' + str(years) + ' years is ' + str(result) )
 print('\n')
 
 # Question 4
-def calculateGPA(score):
+def calculateGPA(score = int(input('Enter your score: '))):
     gpa = ''
     if 80 <= score <=100:
         gpa = 4.00
@@ -58,6 +58,8 @@ def getHonours(gpa):
         honour = 'Cum Laude'
     print('honour:', honour)
     return honour
+gpa = calculateGPA()
+getHonours(gpa)
 
 # Question 5
 radius = float(input('Enter the radius: '))
