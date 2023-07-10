@@ -27,39 +27,39 @@ print('Amount after ' + str(years) + ' years is ' + str(result) )
 print('\n')
 
 # Question 4
-def calculateGPA(score = int(input('Enter your score: '))):
-    gpa = ''
+def calculateGPA():
+    score = int(input('Enter your score: '))
     if 80 <= score <=100:
-        gpa = 4.00
+        return 4.00
     elif 75 <= score <=79:
-        gpa = 3.50
+        return 3.50
     elif 70 <= score <= 74:
-        gpa = 3.00
+        return 3.00
     elif 65 <= score <= 69:
-        gpa = 2.50
+        return 2.50
     elif 60 <= score <= 64:
-        gpa = 2.00
+        return 2.00
     elif 55 <= score <= 59:
-        gpa = 1.50
+        return 1.50
     elif 50 <= score <= 54:
-        gpa = 1.00
+        return 1.00
     elif score < 50:
-        gpa = 0.00
-    print('Your gpa is', gpa)
-    return gpa
-
-def getHonours(gpa):
-    honour = ''
+        return 0.00
+    
+def getHonours():
+    gpa = calculateGPA()
     if 3.85 <= gpa <= 4.00:
         honour = 'Summa Cum Laude'
     elif 3.70 <= gpa <= 3.84:
         honour = 'Magna Cum Laude'
     elif 3.50 <= gpa <= 3.69:
         honour = 'Cum Laude'
+    else:
+        honour='no honours'
     print('honour:', honour)
     return honour
-gpa = calculateGPA()
-getHonours(gpa)
+
+getHonours()
 
 # Question 5
 radius = float(input('Enter the radius: '))
@@ -71,15 +71,15 @@ print('\n')
 def is_triangle(num1, num2, num3):
     if num1 > (num2 + num3) or num2 >(num1 + num3) or num3 > (num1 + num2):
         return False
-    else:
-        return True
+    return True
+
 def stick_length():
     stick1 = int(input('Enter length of stick 1: '))
     stick2 = int(input('Enter length of stick 2: '))
     stick3 = int(input('Enter length of stick 3: '))
     result = is_triangle(stick1,stick2,stick3)
-    if result == False:
-        print('These sticks CANNOT form a triangle!')
+    if result:
+      print('These sticks CAN form a triangle!') 
     else:
-        print('These sticks CAN form a triangle!')
+        print('These sticks CANNOT form a triangle!')
 stick_length()
