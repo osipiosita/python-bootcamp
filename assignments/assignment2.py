@@ -4,8 +4,8 @@ def compareStrings(garland,flower):
         if i in garland:
             count += 1
     return count
-test = compareStrings('z','ZZ')
-print(test)
+print(compareStrings('zZ','ZZzz'))
+
 print('\n')
 
 # Question 2
@@ -31,32 +31,32 @@ def grade_gpa(score):
 
 def honours(gpa):
     if 3.85 <= gpa <= 4.00:
-        honour = 'Summa Cum Laude'
+        return 'Summa Cum Laude'
     elif 3.70 <= gpa <= 3.84:
-        honour = 'Magna Cum Laude'
+       return 'Magna Cum Laude'
     elif 3.50 <= gpa <= 3.69:
-        honour = 'Cum Laude'
+       return 'Cum Laude'
     else:
-        honour='no honours'
-    return honour
+        return 'no honours'
+    
 
 def overall():
     count_Aplus, countA, count_Bplus, countB, count_Cplus, countC, count_Dplus, countD, \
     countE = 0,0,0,0,0,0,0,0,0
     scores = []
     credits = []
-    cgpas = []
-    fcgpa = 0
+    grade_point = []
+    final_grade_point = 0
     total = int(input('How many courses do you want to compute for? '))
-    for _ in range(total):
-        score = int(input('Enter score: '))
+    for i in range(total):
+        score = int(input('Enter score:', i + 1))
         credit = int(input('Enter credit weighting for the above course: '))
         scores.append(score)
         credits.append(credit)
     for i in range(len(scores)):
         var = grade_gpa(scores[i])
         gpa_credit = var[0] * credits[i]
-        cgpas.append(gpa_credit)
+        grade_point.append(gpa_credit)
         if var[1] == 'A+':
             count_Aplus += 1
         elif var[1] == 'A':
@@ -94,9 +94,9 @@ def overall():
         print('You got '+ str(countD), 'D')
     if countE >= 1:
         print('You got '+ str(countE), 'E')
-    for j in cgpas:
-        fcgpa += j
-    cgpa =  fcgpa/sum(credits)
+    for j in grade_point:
+        final_grade_point += j
+    cgpa =  final_grade_point/sum(credits)
     print('Your total gpa is: ',round(cgpa, 2))
     print(honours(round(cgpa,2)))
 overall()
@@ -104,7 +104,9 @@ print('\n')
 
 # Question 3
 numb = int(input('Enter a number: '))
-sum = (numb * (numb + 1))/2
+sum = 0
+for i in range(1,numb+1):
+    sum += i
 print(f'The sum is {sum}')
 print('\n')
 
@@ -130,7 +132,7 @@ def is_vowel():
     vowels = 'aeiou'
     if len(string) > 1:
         print('Enter only ONE character!')
-        
+        is_vowel()
     else:
         if string in vowels:
             return True
