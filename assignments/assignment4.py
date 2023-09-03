@@ -1,4 +1,4 @@
-# Global variables
+
 
 class Student:
    
@@ -9,18 +9,19 @@ class Student:
         self.major = major
         self.yeargroup = yeargroup
         
-    def change_major(self,new):
-        self.major = new
+    def change_major(self,new_major):
+        self.major = new_major
         return self.major
     def __str__(self):
         return f'Name: {self.name}\nID: {self.student_id}\nGender: {self.gender}\nMajor: {self.major}\nYear Group: {self.yeargroup}'
 class Course():
     
-    def __init__(self, course_code,course_name,course_instructor,intern,) -> None:
+    def __init__(self, course_code,course_name,course_instructor,intern) -> None:
         self.course_code = course_code
         self.course_name = course_name
         self.course_instructor = course_instructor
         self.intern = intern
+        
         self.studentsid = []
         self.names = []
         self.genders = []

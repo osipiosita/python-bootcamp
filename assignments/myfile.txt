@@ -1,0 +1,42 @@
+country_name,   mobile_subs_per_capita, internet_users_per_capita
+
+Ghana    0.9945606253378548    0.05035307717476765
+Nigeria    0.6366149201132382    0.24830691364480614
+Sudan    0.7795169142685274    0.11836910372492915
+Egypt    1.113986915901445    0.231727691514375
+Ghana    0.9945606253378548    0.05035307717476765
+import math
+canvas_brushes = 40
+paint = 5
+tax = 10/100
+number_of_paints = int(input('How many paint colors would you like to purchase? '))
+cost_without_tax = canvas_brushes + (number_of_paints * 5)
+total_cost_of_project = cost_without_tax + (tax * cost_without_tax)
+print(math.ceil(total_cost_of_project))
+
+dic = {'Lion':'Grr','Tiger':'Rawr','Snake':'Ssss','Bird':'Chirp'}
+noises = input('Enter the noises you heard: ').split()
+for i in noises:
+    for j in dic:
+        if dic[j] == i:
+            print(j,end=' ')
+def repeated_or_not(string):
+    for i in string:
+        if string.count(i)>1:
+            return 'Deja Vu'
+        
+    return 'Unique'
+def decode(string):
+    var = string[::-1]
+    for i in var:
+        if i.isalpha() or i == ' ':
+            print(i,end='')
+decode('d89%l++5r19o7W *o=l645le9H')
+def remove_symbols(string):
+    for i in string:
+        if i.isalpha() or i.isnumeric() or i == ' ':
+            print(i,end='')
+remove_symbols('#l$e%ts go @an#d@@ g***et #l#unch$$$')
+
+        
+    
